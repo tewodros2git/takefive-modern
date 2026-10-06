@@ -6,24 +6,35 @@ import { navLinks, siteConfig } from '../data/site';
   <div class="hidden border-b border-neutral-100 bg-brand-dark text-neutral-200 sm:block">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-sm">
       <div class="flex items-center gap-4">
-        <a href={`tel:${siteConfig.phone}`} class="hover:text-brand">{siteConfig.phone}</a>
-        <a href={`mailto:${siteConfig.email}`} class="hover:text-brand">{siteConfig.email}</a>
+        <a href={`tel:${siteConfig.phone}`} class="flex items-center gap-1 hover:text-brand">
+          <span class="material-symbols-outlined" aria-hidden="true">call</span>
+          {siteConfig.phone}
+        </a>
+        <a href={`mailto:${siteConfig.email}`} class="flex items-center gap-1 hover:text-brand">
+          <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+          {siteConfig.email}
+        </a>
       </div>
-      <p>{siteConfig.hours}</p>
+      <p class="flex items-center gap-1">
+        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+        {siteConfig.hours}
+      </p>
     </div>
   </div>
 
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
     <a href="/" class="flex items-center gap-3">
       <img src="/logo.jpg" alt={siteConfig.name} class="h-12 w-12 rounded object-cover" />
-      <span class="text-lg font-semibold tracking-tight text-neutral-900">
-        {siteConfig.name}
+      <span class="flex flex-col leading-tight">
+        <span class="text-lg font-semibold tracking-tight text-neutral-900">TAKE FIVE</span>
+        <span class="text-xs font-medium uppercase tracking-wide text-brand-dark/70">Conference &amp; Events</span>
       </span>
     </a>
 
     <nav class="hidden items-center gap-8 md:flex">
       {navLinks.map((link) => (
-        <a href={link.href} class="text-sm font-medium text-neutral-700 hover:text-brand">
+        <a href={link.href} class="flex items-center gap-1.5 text-sm font-medium text-neutral-700 hover:text-brand-dark">
+          <span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
           {link.label}
         </a>
       ))}
@@ -36,20 +47,31 @@ import { navLinks, siteConfig } from '../data/site';
       aria-expanded="false"
       aria-controls="mobile-menu"
     >
-      <span class="block h-0.5 w-6 bg-neutral-900"></span>
-      <span class="my-1 block h-0.5 w-6 bg-neutral-900"></span>
-      <span class="block h-0.5 w-6 bg-neutral-900"></span>
+      <span class="material-symbols-outlined text-3xl text-neutral-900" aria-hidden="true">menu</span>
     </button>
   </div>
 
   <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-neutral-100 px-4 pb-4 md:hidden">
     {navLinks.map((link) => (
-      <a href={link.href} class="py-2 text-sm font-medium text-neutral-700 hover:text-brand">
+      <a href={link.href} class="flex items-center gap-2 py-2 text-sm font-medium text-neutral-700 hover:text-brand-dark">
+        <span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
         {link.label}
       </a>
     ))}
   </nav>
 </header>
+
+<nav
+  class="fixed inset-x-0 bottom-0 z-50 flex items-center justify-around border-t border-neutral-200 bg-white py-2 shadow-[0_-2px_8px_rgba(0,0,0,0.06)] md:hidden"
+  aria-label="Primary mobile navigation"
+>
+  {navLinks.map((link) => (
+    <a href={link.href} class="flex flex-col items-center gap-0.5 px-2 text-[11px] font-medium text-neutral-600 hover:text-brand-dark">
+      <span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
+      {link.label}
+    </a>
+  ))}
+</nav>
 
 <script>
   const toggle = document.getElementById('menu-toggle');

@@ -13,11 +13,18 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About us', href: '/about/' },
-  { label: 'Services', href: '/services/' },
-  { label: 'Gallery', href: '/gallery/' },
-  { label: 'Contact Us', href: '/#contact' },
+  { label: 'Home', href: '/', icon: 'home' },
+  { label: 'About us', href: '/about/', icon: 'info' },
+  { label: 'Services', href: '/services/', icon: 'handshake' },
+  { label: 'Gallery', href: '/gallery/', icon: 'photo_library' },
+  { label: 'Contact Us', href: '/#contact', icon: 'call' },
+];
+
+export const trustStats = [
+  { icon: 'history_edu', value: '17+ Years', label: 'In event management' },
+  { icon: 'event_available', value: '100+', label: 'High-profile events and conferences delivered' },
+  { icon: 'diversity_3', value: '6,000+', label: 'Delegates served in a single event' },
+  { icon: 'handshake', value: 'Trusted by', label: 'AU, UN agencies, WHO, DFID, COMESA' },
 ];
 
 export interface Service {
@@ -25,63 +32,72 @@ export interface Service {
   title: string;
   summary: string;
   description: string;
+  icon: string;
 }
 
 export const services: Service[] = [
   {
     slug: 'event-planning-coordination',
     title: 'Event Planning & Coordination',
-    summary: 'End-to-end planning and on-the-ground coordination for conferences, summits, and ceremonies.',
+    summary: 'We combine creativity with precision planning to bring your vision to life.',
     description:
       'We manage every detail of your event from initial concept through execution, coordinating vendors, schedules, and logistics so your conference or summit runs seamlessly from start to finish.',
+    icon: 'edit_calendar',
   },
   {
     slug: 'venue-sourcing-setup',
     title: 'Venue Sourcing & Setup',
-    summary: 'Finding and preparing the right venue for the scale and tone of your event.',
+    summary: 'We create event spaces that inspire, engage, and impress.',
     description:
       'Our team sources venues that match your event requirements and budget, then manages the full setup — seating, staging, signage, and technical requirements — for a polished result.',
+    icon: 'location_city',
   },
   {
     slug: 'accommodation-coordination',
     title: 'Accommodation Coordination',
-    summary: 'Hotel bookings and delegate accommodation managed from one point of contact.',
+    summary: "Your guests' comfort and convenience are our priority.",
     description:
       'We coordinate accommodation for delegates and guests, negotiating rates and managing bookings so your attendees are comfortably housed for the duration of the event.',
+    icon: 'hotel',
   },
   {
     slug: 'transportation-management',
     title: 'Transportation Management',
-    summary: 'Reliable transport logistics for delegates, VIPs, and event materials.',
+    summary: 'Punctual, safe, and reliable transport every time.',
     description:
       'From airport pickups to delegate shuttles, we plan and manage transportation logistics to keep every participant moving smoothly throughout the event.',
+    icon: 'directions_car',
   },
   {
     slug: 'branding-event-materials',
     title: 'Branding & Event Materials',
-    summary: 'Branded materials and signage that reflect your organization professionally.',
+    summary: "Every detail reflects your brand's professionalism and values.",
     description:
       'We design and produce brochures, banners, delegate kits, ID badges, and signage so every touchpoint reflects your brand and the professionalism of your event.',
+    icon: 'palette',
   },
   {
     slug: 'conference-on-site-management',
     title: 'Conference & On-Site Management',
-    summary: 'Dedicated on-site teams managing registration, AV, and real-time logistics.',
+    summary: 'Flawless execution so you can focus on your guests.',
     description:
       'Our on-site teams manage registration desks, AV and interpretation booths, and real-time logistics, ensuring your conference runs smoothly from the opening session to the close.',
+    icon: 'meeting_room',
   },
   {
     slug: 'post-event-services',
     title: 'Post-Event Services',
-    summary: 'Vendor settlements, feedback surveys, and evaluation reporting after the event.',
+    summary: 'Clear reporting and follow-up once the event concludes.',
     description:
       'Once the event concludes, we manage vendor settlements, collect feedback, and deliver evaluation reports that help you measure impact and plan future events.',
+    icon: 'fact_check',
   },
   {
     slug: 'catering-services',
     title: 'Catering Services',
-    summary: 'Catering coordination tailored to delegate numbers and dietary needs.',
+    summary: 'Quality dining tailored to your delegates and schedule.',
     description:
       'We coordinate catering partners to deliver quality dining experiences for your delegates, tailored to group size, dietary requirements, and event schedule.',
+    icon: 'restaurant',
   },
 ];

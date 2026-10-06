@@ -1,0 +1,13 @@
+---
+import { trustStats } from '../data/site';
+---
+
+<div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
+  {trustStats.map((stat) => (
+    <div class="rounded-lg border border-neutral-200 bg-white p-5 text-center shadow-sm">
+      <span class="material-symbols-outlined text-3xl text-brand" aria-hidden="true">{stat.icon}</span>
+      <p class="mt-2 text-xl font-bold text-neutral-900">{stat.value}</p>
+      <p class="mt-1 text-xs text-neutral-500">{stat.label}</p>
+    </div>
+  ))}
+</div>
