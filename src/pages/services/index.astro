@@ -7,7 +7,7 @@ import { services } from '../../data/site';
   title="Our Services | Take Five Events"
   description="Explore Take Five Events' full range of event management services, from planning and venue sourcing to on-site execution and post-event reporting."
 >
-  <section class="bg-neutral-950 py-20 text-center text-white">
+  <section class="bg-brand-dark py-20 text-center text-white">
     <div class="mx-auto max-w-3xl px-4">
       <p class="text-sm font-semibold uppercase tracking-wide text-brand">Services</p>
       <h1 class="mt-2 text-3xl font-bold sm:text-4xl">Our Unique Services</h1>
@@ -21,7 +21,7 @@ import { services } from '../../data/site';
           href={`/services/${service.slug}/`}
           class="group rounded-lg border border-neutral-200 p-6 transition hover:border-brand hover:shadow-md"
         >
-          <h2 class="font-semibold text-neutral-900 group-hover:text-brand">{service.title}</h2>
+          <h2 class="font-semibold text-neutral-900 group-hover:text-brand-dark">{service.title}</h2>
           <p class="mt-2 text-sm text-neutral-600">{service.summary}</p>
         </a>
       ))}

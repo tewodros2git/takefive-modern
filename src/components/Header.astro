@@ -3,8 +3,8 @@ import { navLinks, siteConfig } from '../data/site';
 ---
 
 <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur">
-  <div class="hidden border-b border-neutral-100 bg-neutral-900 text-neutral-200">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-sm sm:flex">
+  <div class="hidden border-b border-neutral-100 bg-brand-dark text-neutral-200 sm:block">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-sm">
       <div class="flex items-center gap-4">
         <a href={`tel:${siteConfig.phone}`} class="hover:text-brand">{siteConfig.phone}</a>
         <a href={`mailto:${siteConfig.email}`} class="hover:text-brand">{siteConfig.email}</a>
@@ -13,9 +13,12 @@ import { navLinks, siteConfig } from '../data/site';
     </div>
   </div>
 
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-    <a href="/" class="text-lg font-semibold tracking-tight text-neutral-900">
-      {siteConfig.name}
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+    <a href="/" class="flex items-center gap-3">
+      <img src="/logo.jpg" alt={siteConfig.name} class="h-12 w-12 rounded object-cover" />
+      <span class="text-lg font-semibold tracking-tight text-neutral-900">
+        {siteConfig.name}
+      </span>
     </a>
 
     <nav class="hidden items-center gap-8 md:flex">
