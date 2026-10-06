@@ -16,6 +16,7 @@ export const navLinks = [
   { label: 'Home', href: '/', icon: 'home' },
   { label: 'About us', href: '/about/', icon: 'info' },
   { label: 'Services', href: '/services/', icon: 'handshake' },
+  { label: 'Portfolio', href: '/portfolio/', icon: 'military_tech' },
   { label: 'Gallery', href: '/gallery/', icon: 'photo_library' },
   { label: 'Contact Us', href: '/#contact', icon: 'call' },
 ];

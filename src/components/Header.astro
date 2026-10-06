@@ -31,9 +31,9 @@ import { navLinks, siteConfig } from '../data/site';
       </span>
     </a>
 
-    <nav class="hidden items-center gap-8 md:flex">
+    <nav class="hidden items-center gap-5 lg:gap-7 md:flex">
       {navLinks.map((link) => (
-        <a href={link.href} class="flex items-center gap-1.5 text-sm font-medium text-neutral-700 hover:text-brand-dark">
+        <a href={link.href} class="flex items-center gap-1.5 whitespace-nowrap text-sm font-medium text-neutral-700 hover:text-brand-dark">
           <span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
           {link.label}
         </a>
@@ -66,7 +66,7 @@ import { navLinks, siteConfig } from '../data/site';
   aria-label="Primary mobile navigation"
 >
   {navLinks.map((link) => (
-    <a href={link.href} class="flex flex-col items-center gap-0.5 px-2 text-[11px] font-medium text-neutral-600 hover:text-brand-dark">
+    <a href={link.href} class="flex flex-col items-center gap-0.5 px-1 text-[10px] font-medium text-neutral-600 hover:text-brand-dark">
       <span class="material-symbols-outlined" aria-hidden="true">{link.icon}</span>
       {link.label}
     </a>

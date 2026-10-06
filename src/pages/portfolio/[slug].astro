@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { portfolioItems } from '../../data/portfolio';
+
+export function getStaticPaths() {
+  return portfolioItems.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+---
+
+<Layout title={`${item.title} | Take Five Events`} description={item.tagline}>
+  <section class="bg-brand-dark py-20 text-center text-white">
+    <div class="mx-auto max-w-3xl px-4">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand">Portfolio</p>
+      <h1 class="mt-2 text-2xl font-bold sm:text-3xl">{item.title}</h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    <h2 class="text-xl font-bold text-neutral-900">{item.tagline}</h2>
+    <ul class="mt-4 space-y-2 text-sm text-neutral-700">
+      {item.highlights.map((point) => (
+        <li class="flex gap-2">
+          <span class="material-symbols-outlined mt-0.5 text-base text-brand" aria-hidden="true">check_circle</span>
+          <span>{point}</span>
+        </li>
+      ))}
+    </ul>
+
+    <dl class="mt-10 grid grid-cols-2 gap-6 rounded-lg border border-neutral-200 bg-neutral-50 p-6 sm:grid-cols-4">
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-neutral-500">Category</dt>
+        <dd class="mt-1 text-sm font-medium text-neutral-900">{item.category}</dd>
+      </div>
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-neutral-500">Client</dt>
+        <dd class="mt-1 text-sm font-medium text-neutral-900">{item.client}</dd>
+      </div>
+      {item.date && (
+        <div>
+          <dt class="text-xs font-semibold uppercase tracking-wide text-neutral-500">Date</dt>
+          <dd class="mt-1 text-sm font-medium text-neutral-900">{item.date}</dd>
+        </div>
+      )}
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-neutral-500">Location</dt>
+        <dd class="mt-1 text-sm font-medium text-neutral-900">{item.location}</dd>
+      </div>
+    </dl>
+
+    <a href="/portfolio/" class="mt-10 inline-block text-sm font-semibold text-brand-dark hover:underline">
+      ← Back to all portfolio projects
+    </a>
+  </section>
+</Layout>
