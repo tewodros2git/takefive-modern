@@ -8,7 +8,7 @@ export const siteConfig = {
   phoneAlt: '+251930000330',
   email: 'info@takefiveevents.com',
   emailAlt: 'contact@takefiveevents.com',
-  address: 'New Bright Tower, 5th Floor, Room 505, Bole Medhanialem, Addis Ababa, Ethiopia',
+  address: 'Take Five Tower, 2nd Floor, Next to Kadisco, Wereda 5, Akaki Kaliti Sub-city, Addis Ababa, Ethiopia',
   hours: 'Mon – Sat: 8 am – 5 pm, Sunday: CLOSED',
 };
 
