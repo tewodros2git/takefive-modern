@@ -4,21 +4,15 @@ import { navLinks, siteConfig } from '../data/site';
 
 <header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur">
   <div class="hidden border-b border-neutral-100 bg-brand-dark text-neutral-200 sm:block">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-sm">
-      <div class="flex items-center gap-4">
-        <a href={`tel:${siteConfig.phone}`} class="flex items-center gap-1 hover:text-brand">
-          <span class="material-symbols-outlined" aria-hidden="true">call</span>
-          {siteConfig.phone}
-        </a>
-        <a href={`mailto:${siteConfig.email}`} class="flex items-center gap-1 hover:text-brand">
-          <span class="material-symbols-outlined" aria-hidden="true">mail</span>
-          {siteConfig.email}
-        </a>
-      </div>
-      <p class="flex items-center gap-1">
-        <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
-        {siteConfig.hours}
-      </p>
+    <div class="mx-auto flex max-w-6xl items-center justify-end gap-4 px-4 py-2 text-sm">
+      <a href={`tel:${siteConfig.phone}`} class="flex items-center gap-1 hover:text-brand">
+        <span class="material-symbols-outlined" aria-hidden="true">call</span>
+        {siteConfig.phone}
+      </a>
+      <a href={`mailto:${siteConfig.email}`} class="flex items-center gap-1 hover:text-brand">
+        <span class="material-symbols-outlined" aria-hidden="true">mail</span>
+        {siteConfig.email}
+      </a>
     </div>
   </div>
 

@@ -9,7 +9,6 @@ export const siteConfig = {
   email: 'info@takefiveevents.com',
   emailAlt: 'contact@takefiveevents.com',
   address: 'Take Five Tower, 2nd Floor, Next to Kadisco, Wereda 5, Akaki Kaliti Sub-city, Addis Ababa, Ethiopia',
-  hours: 'Mon – Sat: 8 am – 5 pm, Sunday: CLOSED',
 };
 
 export const navLinks = [
