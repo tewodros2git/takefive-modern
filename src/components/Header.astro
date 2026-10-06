@@ -1,0 +1,59 @@
+---
+import { navLinks, siteConfig } from '../data/site';
+---
+
+<header class="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur">
+  <div class="hidden border-b border-neutral-100 bg-neutral-900 text-neutral-200">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2 text-sm sm:flex">
+      <div class="flex items-center gap-4">
+        <a href={`tel:${siteConfig.phone}`} class="hover:text-brand">{siteConfig.phone}</a>
+        <a href={`mailto:${siteConfig.email}`} class="hover:text-brand">{siteConfig.email}</a>
+      </div>
+      <p>{siteConfig.hours}</p>
+    </div>
+  </div>
+
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+    <a href="/" class="text-lg font-semibold tracking-tight text-neutral-900">
+      {siteConfig.name}
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex">
+      {navLinks.map((link) => (
+        <a href={link.href} class="text-sm font-medium text-neutral-700 hover:text-brand">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="md:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="block h-0.5 w-6 bg-neutral-900"></span>
+      <span class="my-1 block h-0.5 w-6 bg-neutral-900"></span>
+      <span class="block h-0.5 w-6 bg-neutral-900"></span>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden flex-col gap-1 border-t border-neutral-100 px-4 pb-4 md:hidden">
+    {navLinks.map((link) => (
+      <a href={link.href} class="py-2 text-sm font-medium text-neutral-700 hover:text-brand">
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('flex');
+    menu?.classList.toggle('hidden');
+    toggle.setAttribute('aria-expanded', String(Boolean(isOpen)));
+  });
+</script>

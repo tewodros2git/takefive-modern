@@ -1,0 +1,42 @@
+---
+import { siteConfig } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-neutral-200 bg-neutral-950 text-neutral-300">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-3">
+    <div>
+      <h3 class="mb-3 text-base font-semibold text-white">Who we are</h3>
+      <p class="text-sm leading-relaxed text-neutral-400">
+        We work with a passion of taking challenges and creating solutions in the event and conference sector.
+      </p>
+      <h3 class="mb-2 mt-6 text-base font-semibold text-white">Open Hours</h3>
+      <p class="text-sm text-neutral-400">{siteConfig.hours}</p>
+    </div>
+
+    <div>
+      <h3 class="mb-3 text-base font-semibold text-white">Official info</h3>
+      <ul class="space-y-2 text-sm text-neutral-400">
+        <li>{siteConfig.address}</li>
+        <li>{siteConfig.phoneAlt}</li>
+        <li>
+          <a href={`mailto:${siteConfig.email}`} class="hover:text-brand">{siteConfig.email}</a>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="mb-3 text-base font-semibold text-white">Quick links</h3>
+      <ul class="space-y-2 text-sm text-neutral-400">
+        <li><a href="/about/" class="hover:text-brand">About us</a></li>
+        <li><a href="/services/" class="hover:text-brand">Services</a></li>
+        <li><a href="/gallery/" class="hover:text-brand">Gallery</a></li>
+        <li><a href="/#contact" class="hover:text-brand">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-neutral-800 px-4 py-5 text-center text-xs text-neutral-500">
+    {year} © All rights reserved by {siteConfig.name}
+  </div>
+</footer>

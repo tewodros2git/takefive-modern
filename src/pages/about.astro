@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../data/site';
+
+const coreValues = [
+  'Excellence – We set high standards for quality and service in every project.',
+  'Integrity – We operate with transparency, ethics, and accountability.',
+  'Agility – We adapt quickly to changing needs and unexpected challenges.',
+  'Innovation – We embrace creativity to deliver unique, memorable experiences.',
+  'Partnership – We work hand-in-hand with clients, vendors, and teams for success.',
+];
+---
+
+<Layout
+  title="About Us | Take Five Events"
+  description="Learn about Take Five Conference and Event, Ethiopia's trusted event management partner since 2007."
+>
+  <section class="bg-neutral-950 py-20 text-center text-white">
+    <div class="mx-auto max-w-3xl px-4">
+      <p class="text-sm font-semibold uppercase tracking-wide text-brand">About us</p>
+      <h1 class="mt-2 text-3xl font-bold sm:text-4xl">
+        We believe that a successful event is more than just logistics
+      </h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4 py-16 text-neutral-700">
+    <p>
+      Founded in 2007, Take Five Conference and Event Organizer is Ethiopia's leading provider of
+      end-to-end event management solutions. For over 17 years, we have been the trusted partner of
+      international organizations, government agencies, corporate clients, and NGOs in delivering
+      high-profile conferences, summits, exhibitions, and cultural events.
+    </p>
+    <p class="mt-4">
+      From the African Union General Assembly to international development forums and state
+      ceremonies, our work is defined by precision, creativity, and professionalism.
+    </p>
+    <p class="mt-4">
+      We believe that a successful event is more than just logistics — it is about creating
+      impactful experiences that leave lasting impressions.
+    </p>
+    <p class="mt-6 text-sm">
+      Call to ask any question:
+      <a href={`tel:${siteConfig.phone}`} class="font-semibold text-brand">{siteConfig.phone}</a>
+    </p>
+
+    <div class="mt-12 rounded-lg border border-neutral-200 p-6">
+      <h2 class="text-xl font-bold text-neutral-900">Naomi Tesfaye</h2>
+      <p class="text-sm text-neutral-500">Founder</p>
+    </div>
+  </section>
+
+  <section class="bg-neutral-50 py-16">
+    <div class="mx-auto grid max-w-5xl gap-10 px-4 md:grid-cols-3">
+      <div>
+        <h3 class="text-lg font-semibold text-neutral-900">Our Vision</h3>
+        <p class="mt-2 text-sm text-neutral-600">
+          To be Africa's most trusted and innovative event management partner, delivering
+          memorable, flawless, and impactful event experiences that inspire, connect, and engage.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-neutral-900">Our Mission</h3>
+        <p class="mt-2 text-sm text-neutral-600">
+          To provide professional, cost-effective, and tailored event solutions that exceed
+          expectations, promote brand excellence, and strengthen stakeholder relationships.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-neutral-900">Our Core Values</h3>
+        <ul class="mt-2 space-y-1 text-sm text-neutral-600">
+          {coreValues.map((value) => <li>{value}</li>)}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <h2 class="text-2xl font-bold text-neutral-900">What our partners say</h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      <blockquote class="rounded-lg border border-neutral-200 p-6">
+        <p class="text-sm text-neutral-600">
+          "TAKE FIVE has consistently provided excellent coordination and logistics support for our
+          high-level summits and assemblies. Their professionalism and efficiency greatly
+          contributed to the success of our events."
+        </p>
+        <footer class="mt-4 text-sm font-semibold text-neutral-900">African Union Commission (AUC)</footer>
+      </blockquote>
+      <blockquote class="rounded-lg border border-neutral-200 p-6">
+        <p class="text-sm text-neutral-600">
+          "We acknowledge the outstanding work of TAKE FIVE in organizing the Human Resource for
+          Health Conference. Their dedication and attention to detail ensured a seamless and
+          impactful event."
+        </p>
+        <footer class="mt-4 text-sm font-semibold text-neutral-900">United Nations Population Fund (UNFPA)</footer>
+      </blockquote>
+      <blockquote class="rounded-lg border border-neutral-200 p-6">
+        <p class="text-sm text-neutral-600">
+          "The training programs facilitated by TAKE FIVE were exceptionally well-organized. Their
+          ability to manage logistics and provide professional support exceeded expectations."
+        </p>
+        <footer class="mt-4 text-sm font-semibold text-neutral-900">DFID – Ethiopia</footer>
+      </blockquote>
+      <blockquote class="rounded-lg border border-neutral-200 p-6">
+        <p class="text-sm text-neutral-600">
+          "We are grateful for the professionalism, reliability, and high-quality service provided
+          by TAKE FIVE during our international conference."
+        </p>
+        <footer class="mt-4 text-sm font-semibold text-neutral-900">Obasanjo Foundation</footer>
+      </blockquote>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { services, siteConfig } from '../data/site';
+
+const values = [
+  { title: 'Excellence', text: 'We set the highest standards for every project.' },
+  { title: 'Integrity', text: 'We operate with transparency and professionalism.' },
+  { title: 'Agility', text: 'We adapt quickly to client needs and changing situations.' },
+  { title: 'Innovation', text: 'We bring fresh, creative solutions to every event.' },
+];
+
+const testimonials = [
+  {
+    quote:
+      'TAKE FIVE has consistently provided excellent coordination and logistics support for our high-level summits and assemblies. Their professionalism and efficiency greatly contributed to the success of our events.',
+    name: 'African Union Commission (AUC)',
+  },
+  {
+    quote:
+      'We acknowledge the outstanding work of TAKE FIVE in organizing the Human Resource for Health Conference. Their dedication and attention to detail ensured a seamless and impactful event.',
+    name: 'United Nations Population Fund (UNFPA)',
+  },
+  {
+    quote:
+      'TAKE FIVE demonstrated creativity, discipline, and cultural expertise during the Miss Tourism International showcase. Their work added immense value to the event.',
+    name: 'Ministry of Culture and Tourism – Ethiopia',
+  },
+  {
+    quote:
+      'We are grateful for the professionalism, reliability, and high-quality service provided by TAKE FIVE during our international conference.',
+    name: 'Obasanjo Foundation',
+  },
+];
+---
+
+<Layout
+  title="Event Organizer in Addis Ababa, Ethiopia | Take Five Events"
+  description={siteConfig.description}
+>
+  <section class="bg-neutral-950 py-24 text-center text-white">
+    <div class="mx-auto max-w-3xl px-4">
+      <h1 class="text-3xl font-bold tracking-tight sm:text-5xl">
+        Take Five Events — Event Organizer in Addis Ababa, Ethiopia
+      </h1>
+      <p class="mt-4 text-lg text-neutral-300">We set the highest standards for every project.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-6xl gap-8 px-4 py-16 sm:grid-cols-2 lg:grid-cols-4">
+    {values.map((value) => (
+      <div class="rounded-lg border border-neutral-200 p-6 text-center">
+        <h3 class="text-lg font-semibold text-neutral-900">{value.title}</h3>
+        <p class="mt-2 text-sm text-neutral-600">{value.text}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="bg-neutral-50 py-16">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-2">
+      <div>
+        <div class="text-5xl font-bold text-brand">17<span class="text-xl">+</span></div>
+        <p class="text-sm font-medium uppercase tracking-wide text-neutral-500">Major Events</p>
+        <h3 class="mt-2 text-xl font-semibold">Golden years we've passed!</h3>
+      </div>
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand">Who We Are</p>
+        <h3 class="mt-1 text-2xl font-bold text-neutral-900">Inspiring Event Solutions Since 2007</h3>
+        <p class="mt-4 text-neutral-600">
+          For over 17 years, Take Five Conference and Event has been Ethiopia's trusted partner for
+          conferences, summits, exhibitions, cultural events, and high-profile ceremonies. We deliver
+          complete event management solutions — from concept and logistics to on-site execution and
+          post-event reporting.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <p class="text-sm font-semibold uppercase tracking-wide text-brand">Services</p>
+    <h2 class="mt-1 text-2xl font-bold text-neutral-900">Our Unique Services</h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {services.slice(0, 6).map((service) => (
+        <a
+          href={`/services/${service.slug}/`}
+          class="group rounded-lg border border-neutral-200 p-6 transition hover:border-brand hover:shadow-md"
+        >
+          <h3 class="font-semibold text-neutral-900 group-hover:text-brand">{service.title}</h3>
+          <p class="mt-2 text-sm text-neutral-600">{service.summary}</p>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 text-center">
+      <a href="/services/" class="inline-flex items-center rounded-md border border-neutral-300 px-6 py-3 text-sm font-semibold text-neutral-900 hover:border-brand hover:text-brand">
+        View all services
+      </a>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-neutral-50 py-16">
+    <div class="mx-auto grid max-w-6xl gap-12 px-4 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-brand">Get in touch</p>
+        <h2 class="mt-1 text-2xl font-bold text-neutral-900">Don't hesitate to contact with us</h2>
+        <div class="mt-6">
+          <ContactForm />
+        </div>
+      </div>
+      <div class="space-y-4 text-sm text-neutral-600">
+        <p>Our office is located: {siteConfig.address}</p>
+        <p>
+          Call us for information:
+          <a href={`tel:${siteConfig.phone}`} class="font-semibold text-brand">{siteConfig.phone}</a>
+        </p>
+        <p>
+          <a href={`mailto:${siteConfig.email}`} class="font-semibold text-brand">Mail us</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-16">
+    <p class="text-sm font-semibold uppercase tracking-wide text-brand">Testimonials</p>
+    <h2 class="mt-1 text-2xl font-bold text-neutral-900">We receive the best client's review.</h2>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2">
+      {testimonials.map((item) => (
+        <blockquote class="rounded-lg border border-neutral-200 p-6">
+          <p class="text-sm text-neutral-600">"{item.quote}"</p>
+          <footer class="mt-4 text-sm font-semibold text-neutral-900">{item.name}</footer>
+        </blockquote>
+      ))}
+    </div>
+  </section>
+</Layout>
